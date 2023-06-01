@@ -1,0 +1,29 @@
+webserver:
+  replicas: 3
+
+  image1:
+    repository: nginx
+    tag: "1.2.3"
+
+  image2:
+    repository: afakharany/watcher
+    tag: "latest"
+
+  serviceAccount:
+    create: true
+    name: "webserver-sa"
+
+  service:
+    type: ClusterIP
+    port: 80
+
+  ingress:
+    enabled: false
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+
+  autoscaling:
+  enabled: false

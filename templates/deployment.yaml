@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver-deployment
+  labels:
+    created-by: aika
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      application: webserver
+  template:
+    metadata:
+      labels:
+        application: webserver
+    spec:
+      containers:
+      - name: webserver
+        image: {{ .Values.webserver.image1.repository }}:{{ .Values.webserver.image1.tag }}
+        ports:
+        - containerPort: 80
+      - name: webwatcher
+        image: {{ .Values.webserver.image2.repository }}:{{ .Values.webserver.image2.tag }}
