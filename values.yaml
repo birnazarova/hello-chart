@@ -2,8 +2,8 @@ webserver:
   replicas: 12
 
   image1:
-    repository: nginx
-    tag: "1.2.3"
+    repository: us-central1-docker.pkg.dev/proven-dryad-417822/hello-app/hello-app
+    tag: "v2"
 
   image2:
     repository: afakharany/watcher
@@ -11,7 +11,7 @@ webserver:
 
   serviceAccount:
     create: true
-    name: "webserver-sa"
+    name: "webserver-service-account"
 
   service:
     type: ClusterIP
@@ -22,8 +22,8 @@ webserver:
 
   resources:
     requests:
-      cpu: 100m
-      memory: 64Mi
+      cpu: 200m
+      memory: 32Mi
 
   autoscaling:
   enabled: false
