@@ -11,7 +11,7 @@ webserver:
 
   serviceAccount:
     create: true
-    name: "webserver-sa"
+    name: "webserver-service-account"
 
   service:
     type: ClusterIP

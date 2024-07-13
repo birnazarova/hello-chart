@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: webserver-deployment
   labels:
-    created-by: aika
+{{- include "commonLabels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      application: webserver
+{{- include "commonLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        application: webserver
+{{- include "commonLabels" . | nindent 8 }}
     spec:
       containers:
       - name: webserver

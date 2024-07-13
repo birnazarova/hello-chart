@@ -5,6 +5,7 @@ metadata:
     application: webserver
   name: webserver-deployment
 spec:
+  type: ClusterIP
   selector:
     application: webserver
   ports:
