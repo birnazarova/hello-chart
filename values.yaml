@@ -2,8 +2,8 @@ webserver:
   replicas: 12
 
   image1:
-    repository: us-central1-docker.pkg.dev/proven-dryad-417822/hello-app/hello-app
-    tag: "v2"
+    repository: nginx
+    tag: "1.2.3"
 
   image2:
     repository: afakharany/watcher
