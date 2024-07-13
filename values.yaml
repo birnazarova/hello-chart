@@ -1,5 +1,5 @@
 webserver:
-  replicas: 12
+  replicas: 3
 
   image1:
     repository: nginx
